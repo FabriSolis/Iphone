@@ -5,31 +5,33 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     color: #333;
+    line-height: 1.6; /* Mejora la legibilidad */
 }
 
 /* Encabezado */
 header {
     background-color: #fff;
-    padding: 20px;
+    padding: 15px; /* Reduce el padding */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Fija el encabezado en la parte superior */
+    position: sticky;
     top: 0;
-    z-index: 100; /* Asegura que el encabezado esté por encima de otros elementos */
-    transition: all 0.3s ease-in-out; /* Añade una transición suave */
+    z-index: 100;
+    transition: transform 0.3s ease-in-out; /* Transición solo para la propiedad transform */
 }
 
 header.ocultar {
-    transform: translateY(-100%); /* Oculta el header */
+    transform: translateY(-100%);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 15px; /* Añade padding lateral */
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 1.3em; /* Reduce el tamaño del logo */
     font-weight: bold;
     color: #333;
     text-decoration: none;
@@ -46,29 +48,36 @@ nav {
 }
 
 /* Estilos para la lista de navegación */
-nav ul {
+.nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
 }
 
-nav ul li {
-    margin-left: 20px;
+.nav-links li {
+    margin-left: 15px; /* Reduce el margen */
 }
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
     color: #666;
     font-weight: bold;
+    transition: color 0.3s ease; /* Añade una transición suave al color */
+}
+
+.nav-links li a:hover {
+    color: #007bff; /* Cambia el color al pasar el mouse */
 }
 
 /* Hero Section */
 #hero {
     display: flex;
     align-items: center;
-    padding: 50px;
+    padding: 40px; /* Reduce el padding */
     background-color: #f9f9f9;
+    text-align: center; /* Centra el contenido */
 }
 
 .hero-content {
@@ -76,24 +85,29 @@ nav ul li a {
 }
 
 .hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 2.8em; /* Reduce el tamaño del título */
+    margin-bottom: 15px; /* Reduce el margen */
 }
 
 .hero-content p {
-    font-size: 1.2em;
+    font-size: 1.1em; /* Aumenta el tamaño del párrafo */
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 25px; /* Reduce el margen */
 }
 
 .cta-button {
     display: inline-block;
     background-color: #007bff;
     color: #fff;
-    padding: 15px 30px;
+    padding: 12px 25px; /* Reduce el padding */
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s ease; /* Añade una transición suave al color */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el mouse */
 }
 
 .hero-image {
@@ -102,102 +116,121 @@ nav ul li a {
 }
 
 .hero-image img {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
 }
 
 /* Modelos Section */
 #modelos {
-    padding: 50px;
+    padding: 40px; /* Reduce el padding */
     text-align: center;
 }
 
 .modelos-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    flex-wrap: wrap; /* Permite que los modelos se envuelvan en pantallas pequeñas */
+    gap: 20px; /* Reduce el gap */
+    margin-top: 25px; /* Reduce el margen */
 }
 
 .modelo {
-    width: 300px;
+    width: calc(50% - 20px); /* Dos modelos por fila en pantallas medianas */
     background-color: #fff;
-    padding: 20px;
+    padding: 15px; /* Reduce el padding */
     border-radius: 5px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .modelo img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduce el margen */
 }
 
 .modelo h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.3em; /* Reduce el tamaño del título */
+    margin-bottom: 8px; /* Reduce el margen */
+}
+
+.modelo p {
+    font-size: 0.9em; /* Aumenta el tamaño del párrafo */
+    line-height: 1.4;
 }
 
 /* Caracteristicas Section */
 #caracteristicas {
-    padding: 50px;
+    padding: 40px; /* Reduce el padding */
     background-color: #f9f9f9;
 }
 
 /* Estilos para el grid de características */
 .caracteristicas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas flexibles */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crea columnas flexibles */
+    gap: 15px; /* Reduce el gap */
 }
 
 /* Estilos para cada item de característica */
 .caracteristica-item {
-    padding: 20px;
+    padding: 15px; /* Reduce el padding */
     color: white;
     border-radius: 5px;
-    height: 250px; /* Altura fija para todas las características */
+    height: 200px; /* Reduce la altura */
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* Alinea el contenido en la parte inferior */
 	background: url("iphone.jpg") center/cover no-repeat; /* Asegura que la imagen sea siempre iphone.jpg */
+    transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+.caracteristica-item:hover {
+    transform: translateY(-5px); /* Eleva el elemento al pasar el mouse */
 }
 
 .caracteristica-item h3 {
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduce el margen */
+    font-size: 1.1em; /* Reduce el tamaño del título */
 }
 
 /* Precios Section */
 #precios {
-    padding: 50px;
+    padding: 40px; /* Reduce el padding */
     text-align: center;
+    overflow: hidden; /* Añade overflow: hidden; para evitar desbordamientos */
 }
 
 .precios-lista {
     list-style: none;
     padding: 0;
+    margin: 0; /* Elimina el margen */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px;
 }
 
 .precio-item {
-    width: 300px;
-    margin-bottom: 30px;
+    width: 300px; /* Ancho fijo para los elementos */
+    margin-bottom: 20px;
     text-align: center;
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
 }
 
 .precio-item img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .precio-item h3 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 1.3em;
 }
 
 .precio {
@@ -223,7 +256,7 @@ nav ul li a {
 
 /* Testimonios Section */
 #testimonios {
-    padding: 50px;
+    padding: 40px; /* Reduce el padding */
     text-align: center;
     background-color: #fff;
 }
@@ -231,33 +264,42 @@ nav ul li a {
 .testimonios-grid {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px; /* Reduce el gap */
+    margin-top: 25px; /* Reduce el margen */
 }
 
 .testimonio {
     width: 400px;
-    padding: 20px;
+    padding: 15px; /* Reduce el padding */
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.testimonio p {
+    font-size: 0.95em; /* Aumenta el tamaño del párrafo */
+    line-height: 1.4;
 }
 
 .testimonio .autor {
     font-style: italic;
     text-align: right;
+    font-size: 0.8em; /* Reduce el tamaño del autor */
 }
 
 /* Contacto Section */
 #contacto {
-    padding: 50px;
+    padding: 40px; /* Reduce el padding */
     background-color: #f9f9f9;
     text-align: center;
 }
+
 #contacto form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 90%; /* Aumenta el ancho */
+    max-width: 500px; /* Limita el ancho máximo */
     margin: 0 auto;
 }
 
@@ -265,6 +307,7 @@ nav ul li a {
     margin-bottom: 5px;
     text-align: left;
     width: 100%;
+    font-weight: bold;
 }
 
 #contacto input,
@@ -275,20 +318,22 @@ nav ul li a {
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+    font-size: 1em; /* Aumenta el tamaño de la fuente */
 }
 
 #contacto button {
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 25px; /* Aumenta el padding */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.1em; /* Aumenta el tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Añade una transición suave al color */
 }
 
 #contacto button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Cambia el color al pasar el mouse */
 }
 
 /* Footer */
@@ -296,7 +341,8 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 15px; /* Reduce el padding */
+    font-size: 0.9em; /* Reduce el tamaño de la fuente */
 }
 
 /* Estilos para el botón de WhatsApp */
@@ -304,24 +350,30 @@ footer {
     display: inline-block;
     background-color: #25D366; /* Color verde de WhatsApp */
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 18px; /* Reduce el padding */
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+    transition: background-color 0.3s ease; /* Añade una transición suave al pasar el mouse */
+    font-size: 0.9em; /* Reduce el tamaño de la fuente */
 }
 
 .whatsapp-button:hover {
     background-color: #128C7E; /* Un verde más oscuro al pasar el mouse */
 }
+
 /* Estilos para la animación */
-.modelo, .caracteristica-item, .testimonio {
+.modelo,
+.caracteristica-item,
+.testimonio {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(20px); /* Reduce el desplazamiento */
     transition: all 0.5s ease-in-out;
 }
 
-.modelo.mostrar, .caracteristica-item.mostrar, .testimonio.mostrar {
+.modelo.mostrar,
+.caracteristica-item.mostrar,
+.testimonio.mostrar {
     opacity: 1;
     transform: translateY(0);
 }
@@ -330,54 +382,51 @@ footer {
 @media (max-width: 768px) {
     /* Ajustes generales */
     body {
-        font-size: 16px; /* Aumenta el tamaño de la fuente base */
+        font-size: 16px;
     }
 
     section {
-        padding: 30px; /* Reduce el padding en las secciones */
+        padding: 25px; /* Reduce el padding aún más */
     }
 
     /* Hero Section */
     #hero {
-        flex-direction: column; /* Apila los elementos */
-        text-align: center; /* Centra el contenido */
-        padding: 30px; /* Reduce el padding */
+        flex-direction: column;
+        text-align: center;
+        padding: 25px; /* Reduce el padding aún más */
     }
 
     .hero-content h1 {
-        font-size: 2.5em; /* Reduce el tamaño del título */
+        font-size: 2.2em; /* Reduce el tamaño del título */
     }
 
     .hero-content p {
-        font-size: 1.1em; /* Aumenta el tamaño del párrafo */
+        font-size: 1em; /* Aumenta el tamaño del párrafo */
     }
 
     .hero-image {
-        margin-top: 20px; /* Añade margen superior a la imagen */
-    }
-
-    .hero-image img {
-        max-width: 100%; /* La imagen ocupa todo el ancho */
+        margin-top: 15px; /* Reduce el margen */
     }
 
     /* Modelos Section */
     #modelos {
-        padding: 30px; /* Reduce el padding */
+        padding: 25px; /* Reduce el padding aún más */
     }
 
     .modelos-grid {
-        flex-direction: column; /* Apila los modelos */
-        align-items: center; /* Centra los modelos */
+        flex-direction: column;
+        align-items: center;
     }
 
     .modelo {
-        width: 100%; /* Los modelos ocupan todo el ancho */
-        margin-bottom: 30px; /* Añade margen inferior */
+        width: 90%; /* Los modelos ocupan un porcentaje del ancho */
+        margin-bottom: 20px; /* Reduce el margen */
+        text-align: center; /* Centra el texto */
     }
 
     /* Caracteristicas Section */
     #caracteristicas {
-        padding: 30px; /* Reduce el padding */
+        padding: 25px; /* Reduce el padding aún más */
     }
 
     .caracteristicas-grid {
@@ -386,73 +435,106 @@ footer {
 
     .caracteristica-item {
         height: auto; /* Altura automática */
-        margin-bottom: 20px; /* Añade margen inferior */
+        margin-bottom: 15px; /* Reduce el margen */
     }
 
     /* Precios Section */
     #precios {
-        padding: 30px; /* Reduce el padding */
+        padding: 25px; /* Reduce el padding aún más */
     }
 
     .precios-lista {
-        flex-direction: column; /* Apila los precios */
-        align-items: center; /* Centra los precios */
+        flex-direction: column;
+        align-items: center;
     }
 
     .precio-item {
-        width: 100%; /* Los precios ocupan todo el ancho */
-        margin-bottom: 30px; /* Añade margen inferior */
+        width: 90%; /* Los precios ocupan un porcentaje del ancho */
+        margin-bottom: 20px; /* Reduce el margen */
     }
 
     /* Testimonios Section */
     #testimonios {
-        padding: 30px; /* Reduce el padding */
+        padding: 25px; /* Reduce el padding aún más */
     }
 
     .testimonios-grid {
-        flex-direction: column; /* Apila los testimonios */
-        align-items: center; /* Centra los testimonios */
+        flex-direction: column;
+        align-items: center;
     }
 
     .testimonio {
-        width: 100%; /* Los testimonios ocupan todo el ancho */
-        margin-bottom: 30px; /* Añade margen inferior */
+        width: 90%; /* Los testimonios ocupan un porcentaje del ancho */
+        margin-bottom: 20px; /* Reduce el margen */
     }
 
     /* Contacto Section */
     #contacto {
-        padding: 30px; /* Reduce el padding */
+        padding: 25px; /* Reduce el padding aún más */
     }
 
-    /* Ajustes para el menú de navegación (ejemplo básico) */
+    /* Menu Hamburguesa */
     nav ul {
-        display: none; /* Oculta la lista de navegación */
-        flex-direction: column; /* Apila los enlaces del menú */
-        text-align: center; /* Centra los enlaces */
+        display: none;
+        flex-direction: column;
         position: absolute;
-        top: 100%;
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        text-align: center;
     }
-
     nav ul.show {
-        display: flex; /* Muestra la lista de navegación cuando tiene la clase 'show' */
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 1.2em;
+        padding: 5px;
+        border: none;
+        background: none;
+    }
+    .menu-toggle:focus {
+        outline: none;
+    }
+    /* Oculta la lista de navegación en pantallas pequeñas */
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        text-align: center;
     }
 
-    nav ul li {
-        margin-left: 0; /* Elimina el margen izquierdo */
-        margin-bottom: 10px; /* Añade margen inferior */
+    /* Muestra la lista de navegación cuando tiene la clase 'show' */
+    nav .nav-links.show {
+        display: flex;
     }
 
     /* Muestra el botón del menú hamburguesa */
     .menu-toggle {
         display: block;
     }
-
-    /* Estilos para el formulario de contacto en pantallas pequeñas */
-    #contacto form {
-        width: 100%;
+    .modelo {
+    width: 100%;
+    }
+    /* Estilos para los precios en pantallas pequeñas */
+    .precio-item {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    }
+    .caracteristica-item {
+    width: 100%;
     }
 }
+

@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     // --- Funcionalidad del Menú Hamburguesa ---
     const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
+    const navLinks = document.querySelector('.nav-links');
 
-    if (menuToggle) {
+    if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function() {
-            navUl.classList.toggle('show');
+            navLinks.classList.toggle('show');
         });
     }
 
@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             // Cierra el menú hamburguesa después de hacer clic en un enlace (opcional)
-            if (menuToggle && navUl.classList.contains('show')) {
-                navUl.classList.remove('show');
+            if (menuToggle && navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
             }
         });
     });
